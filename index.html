@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name ="author" content="hraklaras">
+        <title>ΜΗΝΥΜΑ ΜΕΤΑΚΙΝΗΣΗΣ</title>
+        <link rel="stylesheet" href="style.css?"/>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1><a href="index.html" class="logo">ΜΗΝΥΜΑ ΜΕΤΑΚΙΝΗΣΗΣ</a></h1>
+                
+                <div class="menu">
+                <!--   <ul>
+                        <li><a href="countdown-clock.html">Christmas countdown </a> </li>
+                        <li><a href="clock/clock.html">analog clock</a></li>
+                        <li><a href="13033/13033.html">13033</a></li>
+                    </ul>
+                --> 
+                </div>
+            </div>
+        </header>
+        <div class="forma">
+        <a>Συμπληρώστε τα στοιχεία σας: </a><br>
+        <form >
+            <label for="fname">Ονοματεπώνυμο: </label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="address">Διεύθυνση κατοικίας: </label><br>
+            <input type="text" id="address" name="address"><br>
+            <label for="epiloges">Λόγος μετακίνησης: </label><br>
+            <select id="epiloges" >
+                <option disabled selected value="0">-- Επιλέξτε --</option>
+                <option value="1">*1. Φαρμακείο, γιατρός κλπ..</option>
+                <option value="2">*2. Σουπερ Μαρκετ κλπ..</option>
+                <option value="3">*3. Δημόσια υπηρεσία</option>
+                <option value="4">*4. Παροχή Βοηθειών σε τρίτους</option>
+                <option value="5">*5. Μετάβαση σε τελετές</option>
+                <option value="6">*6. Άσκηση,βόλτα κατοικιδίου</option>
+            </select><br><br>
+            <input type="checkbox" id="myCheck" >
+			<label class="checkbox-label">Αποδέχομαι τους <a href="terms-and-privacy.html">όρους και προϋποθέσεις</a></label><br>
+                <br><input type='button' onclick='sendmsg()' value='Υποβολή' />
+        </form>
+        <script>
+            function sendmsg(){
+                if(( window.innerWidth >= 800 ) && ( window.innerHeight >= 600 )){
+                    alert("Χρησιμοποιείστε την ιστοσελίδα μόνο απο κινητό!");
+                }
+                else{
+                    var fname = document.getElementById('fname');
+                    var address = document.getElementById('address');
+                    var epilogh = document.getElementById('epiloges');
+                    var checkBox = document.getElementById("myCheck");
+                    if(fname.value== null || fname.value == "" || address.value== null || address.value == "" || epiloges.value== 0){
+                        alert("Συμπληρώστε όλα τα κενά!");
+                    }
+                    else if(checkBox.checked==false){
+                         alert("Πρέπει πρώτα να αποδεχτείτε τους όρους για να συνεχίσετε");
+                    }
+                    else{
+                        var url="sms:13033;?&body="+epilogh.value +" "+fname.value.toUpperCase()+" "+address.value.toUpperCase();
+                        window.open(url);
+                    }
+                }
+            }
+            
+        </script>
+        
+         <p>
+            *1. Μετακίνηση για λόγους υγείας (μετάβαση σε φαρμακείο, επίσκεψη στον γιατρό ή μετάβαση σε νοσοκομείο ή κέντρο υγείας, εφόσον αυτό συνιστάται μετά από σχετική επικοινωνία).
+            <br>
+            *2. Μετάβαση σε εν λειτουργία κατάστημα προμηθειών ειδών πρώτης ανάγκης, όπου δεν είναι δυνατή η έγκαιρη αποστολή τους.
+            <br>
+            *3. Μετάβαση σε δημόσια υπηρεσία, εφόσον δεν είναι δυνατή η ηλεκτρονική ή τηλεφωνική εξυπηρέτηση και μόνο για κατεπείγουσες ανάγκες, μετά από τον καθορισμό ραντεβού για το οποίο ενημερώνεται εγγράφως ή ηλεκτρονικώς ο πολίτης και υπό την επιπλέον προϋπόθεση επίδειξης της ως άνω ενημέρωσης, καθώς και μετάβαση στην τράπεζα, στο μέτρο που δεν είναι δυνατή ηλεκτρονική συναλλαγή.
+            <br>
+            *4. Μετάβαση για παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη, καθώς και για μεταφορά συζύγου ή συγγενούς πρώτου βαθμού από και προς τον τόπο εργασίας του, εφόσον υφίσταται σχετική ανάγκη, ή συνοδεία μαθητού στο σχολείο από γονέα ή κηδεμόνα. Σε αυτές τις περιπτώσεις (παροχή βοήθειας, μεταφορά συζύγου ή συγγενούς στην εργασία του και συνοδεία μαθητή), αποστέλλεται SMS με τον κωδικό 4. 
+            <br>
+            *5. Μετάβαση σε κηδεία υπό τους όρους που προβλέπεται από τον νόμο ή για μετάβαση γονέων που τελούν σε διάσταση που είναι αναγκαία για τη διασφάλιση της επικοινωνίας γονέων και τέκνων, σύμφωνα με τις κείμενες διατάξεις.
+            <br>
+            *6. Σωματική άσκηση σε εξωτερικό χώρο ή κίνηση με κατοικίδιο ζώο, ατομικά ή ανά δύο (2)άτομα, υπό την προϋπόθεση τήρησης στην τελευταία αυτή περίπτωση της αναγκαία απόστασης του ενάμισι (1,5)μέτρου. Καθώς και μετάβαση για σίτιση αδέσποτων ζώων, εφόσον η μετάβαση πραγματοποιείται εντός του δήμου κατοικίας του πολίτη.
+      
+          </p>
+      
+        </div>
+        <footer>
+            <div class="cpr">
+				<a>Copyright &copy;
+					<script>
+						var CurrentYear = new Date().getFullYear();
+                        if(CurrentYear != 2020){
+						    document.write(2020+" - "+CurrentYear);
+                        }
+                        else
+                            document.write(CurrentYear);
+					</script>
+				</a>
+				<a href="https://www.instagram.com/hraklaras/"><b>Ηρακλής Χρύσανθος</b></a><a> All Rights Reserved<br><br></a>
+			</div>
+        </footer>
+    </body>
+</html>

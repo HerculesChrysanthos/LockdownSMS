@@ -1,0 +1,84 @@
+body{
+    font: 15px/1.5 Arial,Helvetica,sans-serif;
+    padding:0;
+    margin:0;
+    background-color:#f4f4f4;
+}
+
+.container{
+	text-align: center;
+	overflow: hidden;
+}
+header{
+	background:#85a3b4;
+	color:#ffffff;
+	padding-top:20px;
+	min-height:90px;
+}
+.logo{
+    color: #ffffff;
+    text-decoration:none;
+}
+
+.forma{
+    margin: auto;
+    width:60%;
+}
+
+.forma input[type=text],.forma select{
+    width:90%;
+	padding: 8px;
+	margin: 2px;
+}
+
+.forma input[type=checkbox]{
+    position: relative;
+	cursor: pointer;
+	transform: scale(1.5);
+}
+
+.checkbox-label label{
+	font-size:12px;
+}
+
+section#cont{
+    background-color:#85a3b4;
+	margin: auto;
+	width:90%;
+	margin-top:10px;
+}
+
+#cont .contactLogos img{
+	width:20px;
+}
+
+#cont .contactLogos a{
+	
+	text-decoration:none;
+}
+
+footer{
+	background-color:#85a3b4;
+	padding-top: 15px;
+	margin-top:10px;
+}
+
+.cpr{
+	text-align:center;
+}
+
+footer .cpr a{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+@media screen and (max-width: 768px){
+    body{
+        font: 14px/1.5 Arial,Helvetica,sans-serif;
+    }
+    .forma{
+		float:none;
+		text-align:left;
+		width:90%;
+	}
+}
